@@ -1,0 +1,132 @@
+/* =====================================================
+   PATCH: info-card → Responsive Grid Layout
+   Target: .module-body .info-card (dalam learningModule)
+   Overwrite: tampilan card menjadi col-1-3 grid
+   Build: 2026-05-23
+   ===================================================== */
+
+/* Container wrapper — auto-grid dari info-card berurutan */
+.module-body .info-card,
+.artikel .info-card {
+    /* Reset default block layout */
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33.33% - 14px); /* 3 kolom dengan gap */
+    margin: 0 6px 14px 0;
+    box-sizing: border-box;
+
+    /* Pertahankan style asli */
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-left: 4px solid var(--pColor, #00738e);
+    border-radius: 0 var(--radius-sm, 4px) var(--radius-sm, 4px) 0;
+    padding: 15px;
+}
+
+/* Wrapper otomatis menggunakan CSS Grid jika ada 2+ card berurutan */
+/* Teknik: manfaatkan pseudo-wrapper via adjacent sibling selector */
+
+/* Gunakan grid container lewat parent .module-body */
+.module-body {
+    /* Aktifkan grid context untuk info-card */
+    container-type: inline-size;
+}
+
+/* Grid wrapper explicit — dibungkus otomatis oleh JS atau manual */
+/* Alternatif bersih: bungkus semua .info-card dalam .card-grid via JS */
+
+/* === SOLUSI BERSIH: Overwrite lewat grid display pada parent === */
+
+/* Jika info-card muncul berurutan tanpa tag lain di antaranya,
+   gunakan teknik CSS Grid pada blok kontainer terdekat */
+
+/* Override: semua .info-card di dalam .module-body pakai grid */
+.module-body .info-card-grid,
+.artikel .info-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 14px 0;
+}
+
+.info-card-grid .info-card {
+    width: 100% !important;
+    margin: 0 !important;
+    display: block;
+}
+
+/* === PENDEKATAN LANGSUNG: override info-card jadi flex item === */
+/* Bungkus semua .info-card berurutan dengan .info-card-row di dataset */
+
+/* Kelas pembantu yang bisa ditambahkan di wrapper div */
+.info-card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin: 14px 0;
+}
+
+.info-card-row .info-card {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* === PATCH OTOMATIS VIA JS HOOK ===
+   Tambahkan script di bawah ini ke index.html atau script.js
+   untuk auto-wrap info-card berurutan menjadi grid:
+
+   // Auto-grid info-card berurutan
+   document.querySelectorAll('.module-body').forEach(body => {
+       const cards = [];
+       let nodes = [...body.childNodes];
+       nodes.forEach(node => {
+           if (node.nodeType === 1 && node.classList.contains('info-card')) {
+               cards.push(node);
+           } else if (cards.length > 1) {
+               const wrapper = document.createElement('div');
+               wrapper.className = 'info-card-row';
+               cards[0].parentNode.insertBefore(wrapper, cards[0]);
+               cards.forEach(c => wrapper.appendChild(c));
+               cards.length = 0;
+           } else {
+               cards.length = 0;
+           }
+       });
+       if (cards.length > 1) {
+           const wrapper = document.createElement('div');
+           wrapper.className = 'info-card-row';
+           cards[0].parentNode.insertBefore(wrapper, cards[0]);
+           cards.forEach(c => wrapper.appendChild(c));
+       }
+   });
+*/
+
+/* === RESPONSIVE BREAKPOINTS === */
+@media (max-width: 900px) {
+    .module-body .info-card,
+    .artikel .info-card {
+        width: calc(50% - 10px);
+    }
+
+    .info-card-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .module-body .info-card,
+    .artikel .info-card {
+        width: 100%;
+        margin: 0 0 10px 0;
+        display: block;
+    }
+
+    .info-card-row,
+    .info-card-grid {
+        grid-template-columns: 1fr;
+    }
+}

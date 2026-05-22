@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or teaching, please cite it using the metadata below."
+type: software
+
+title: "DonatJS LMS: Minimalist Client-Side Router & UI Engine for Web Programming Courses"
+abstract: >
+  A zero-dependency, no-build-step, JSON-driven micro-framework for rendering structured data
+  as dynamic web interfaces entirely on the client side. Deployed as an open courseware platform
+  for the Web Programming (Pemrograman Web) course at Universitas IPWIJA, Jakarta. Features an
+  integrated quiz engine, certificate verifier, and 16-module structured learning system covering
+  HTML5, CSS3, JavaScript ES6+, LocalStorage, Fetch API, and Single Page Application architecture.
+  Framework lineage: Ktupad (2019) → BayamJS (2023) → DonatJS (2024–2026).
+
+authors:
+  - family-names: Sismadi
+    given-names: Wawan
+    orcid: "https://orcid.org/0009-0007-2685-5663"
+    affiliation: "Universitas IPWIJA / PT Sismadi Langit Solusi"
+    email: wawan@sismadi.com
+
+version: "1.0.0"
+date-released: "2026-04-20"
+
+license: MIT
+url: "https://donat.id"
+repository-code: "https://github.com/ipwija/pw"
+
+doi: "10.5281/zenodo.XXXXXXXX"
+
+keywords:
+  - javascript
+  - client-side rendering
+  - json-driven UI
+  - single page application
+  - zero dependency
+  - no-build step
+  - web framework
+  - learning management system
+  - educational technology
+  - micro-framework
+  - open courseware
+  - pemrograman web
+  - Universitas IPWIJA
+
+references:
+  - type: software
+    title: "DonatJS Core"
+    url: "https://donatjs.github.io/core"
+    authors:
+      - family-names: Sismadi
+        given-names: Wawan
+  - type: book
+    title: "Pengembangan Aplikasi Web Modern dengan DonatJS"
+    year: 2024
+    isbn: "978-623-848-897-1"
+    publisher: "P4I"
+    authors:
+      - family-names: Sismadi
+        given-names: Wawan

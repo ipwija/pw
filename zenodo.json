@@ -1,0 +1,77 @@
+{
+  "title": "DonatJS LMS: Minimalist Client-Side Router & UI Engine for Web Programming Courses",
+  "description": "A zero-dependency, no-build-step, JSON-driven micro-framework deployed as open courseware for the Web Programming (Pemrograman Web) course at Universitas IPWIJA, Jakarta. The platform transforms declarative JavaScript objects into rendered components — hero sections, feature cards, quiz engines, certificate verifiers, and 16-module structured learning content — without any external libraries or build toolchains.\n\nThe course covers the full web development stack in a client-side-first approach: HTML5 semantics, CSS3 layout & variables, JavaScript ES6+ (DOM, events, closures), LocalStorage CRUD, Fetch API with JSON hydration, and Single Page Application architecture. The final project challenges students to build a functional CMS from scratch.\n\nThe framework lineage traces from Ktupad (2019, PHP/MVC) → BayamJS (2023, JS/MVC) → DonatJS (2024–2026, JSON-driven CSR). Lighthouse audit metrics: Performance 98, Accessibility 92, Best Practices 100, SEO 90.\n\nHKI Copyright registration: EC00202414144. Patent application: S00202503129 (DJKI Indonesia).",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "publication_date": "2026-04-20",
+  "version": "1.0.0",
+  "language": "id",
+  "defined_type": "software",
+  "creators": [
+    {
+      "name": "Sismadi, Wawan",
+      "first_name": "Wawan",
+      "last_name": "Sismadi",
+      "institution": "Universitas IPWIJA / PT Sismadi Langit Solusi",
+      "orcid_id": "0009-0007-2685-5663"
+    }
+  ],
+  "categories": [
+    "Computer Science",
+    "Software Engineering",
+    "Educational Technology"
+  ],
+  "tags": [
+    "javascript",
+    "client-side rendering",
+    "json-driven UI",
+    "single page application",
+    "zero dependency",
+    "no-build step",
+    "micro-framework",
+    "learning management system",
+    "educational technology",
+    "open courseware",
+    "web programming",
+    "pemrograman web",
+    "Universitas IPWIJA",
+    "Indonesia"
+  ],
+  "references": [
+    "Sismadi, W. (2024). Pengembangan Aplikasi Web Modern dengan DonatJS. P4I. ISBN 978-623-848-897-1.",
+    "Sismadi, W. (2024). Optimasi Penggunaan SVG dalam Web Development. P4I. ISBN 978-623-876-765-6.",
+    "Sismadi, W. (2026). Arsitektur Piawai Mengajar (Manuscript, 9 chapters). Universitas Ahmad Dahlan."
+  ],
+  "related_materials": [
+    {
+      "title": "DonatJS LMS — Live Deployment",
+      "url": "https://donat.id",
+      "relation": "IsDocumentedBy",
+      "identifier_type": "URL"
+    },
+    {
+      "title": "Source Repository",
+      "url": "https://github.com/ipwija/pw",
+      "relation": "IsSupplementTo",
+      "identifier_type": "URL"
+    },
+    {
+      "title": "DonatJS Core CDN",
+      "url": "https://donatjs.github.io/core",
+      "relation": "IsRequiredBy",
+      "identifier_type": "URL"
+    },
+    {
+      "title": "HKI Copyright — EC00202414144",
+      "url": "https://pdki-indonesia.dgip.go.id",
+      "relation": "IsIdenticalTo",
+      "identifier_type": "URL"
+    }
+  ],
+  "custom_fields": {
+    "Software programming language": "JavaScript (ES6+)",
+    "Development Status": "Active",
+    "Operating System": "Browser (Any OS)"
+  }
+}
